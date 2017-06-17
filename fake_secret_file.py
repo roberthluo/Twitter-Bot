@@ -30,5 +30,17 @@ class secret_file():
         #access_token = oauth.Token(key=access_token, secret= access_token_secret)
         #client = oauth.Client(consumer, access_token)
 
-    def get_auth():
-        return tweepy.OAuthHandler(consumer_key, consumer_secret)
+    def get_test(self):
+
+
+        auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+        auth.set_access_token(access_token, access_token_secret)
+
+        api = tweepy.API(auth)
+
+        public_tweets = api.home_timeline()
+
+
+        for tweet in public_tweets:
+            print tweet.text
+        return auth
