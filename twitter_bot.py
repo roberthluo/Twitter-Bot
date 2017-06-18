@@ -17,3 +17,8 @@ class twitter_bot(tweepy.StreamListener):
         if status_code == 420:
             #returning False in on_data disconnects the StreamListener
             return False
+
+    def create_stream(self, api):
+        myStreamListener = MyStreamListener()
+        myStream = tweepy.Stream(auth = api.auth, listener = myStreamListener())
+        myStream.filter(track=['Trump'], async=True)
