@@ -31,17 +31,24 @@ class get_tweets(object):
         public_tweets = api.home_timeline()
 
         for tweet in public_tweets:
-            print tweet.text
+            print (tweet.text)
 
     def get_user(self, user_name):
         user = api.get_user(user_name)
-        print user.screen_name
-        print user.followers_count
+        print (user.screen_name)
+        print (user.followers_count)
         #print user.tweets
         timeline = api.user_timeline(screen_name = user_name, count = 100, include_rts = True)
 
         for tweet in timeline:
             print (tweet.created_at, tweet.text, '\n')
+
+    def get_all_followers(self):
+        for follower in tweepy.Cursor(api.followers).item():
+            follower.follow()
+
+    def update_own_status(self, status):
+        api.update_status(status)
 
 if  __name__ == '__main__':
 
@@ -51,3 +58,5 @@ if  __name__ == '__main__':
     tweets = get_tweets(secret_file)
 
     tweets.get_user("realdonaldtrump")
+
+    tweets.update_own_status("Hi, I am a twitter bot!")
