@@ -1,6 +1,8 @@
-# DonaldTrump-Tweets
-Using twitter API to track Donald Trump's tweets and spikes with google searches
+# Twitter Bot
+Using twitter API to track Any user's tweets and spikes with google searches
 
+Planning to combine with ML to favourite tweets based on what I favourite on twitter.
+Eventually use ML to automate my tweet feed.
 
 To preface, I have no idea what I was doing.
 
