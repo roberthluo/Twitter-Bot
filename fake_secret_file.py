@@ -10,7 +10,7 @@ class secret_file():
     consumer_secret = ""
     access_token = ""
     access_token_secret = ""
-
+    google_api_key = ""
 
     def __init__(self):
 
@@ -18,6 +18,7 @@ class secret_file():
         global consumer_secret
         global access_token
         global access_token_secret
+        global google_api_key
 
         consumer_key="aaaaa"
         consumer_secret="bbbbbb"
@@ -25,6 +26,7 @@ class secret_file():
         access_token="ccccccc"
         access_token_secret="dddddd"
 
+        google_api_key = "fdfdfdf"
 
         #consumer = oauth.consumer(key=consumer_key, secret=consumer_secret);
         #access_token = oauth.Token(key=access_token, secret= access_token_secret)
