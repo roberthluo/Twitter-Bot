@@ -1,3 +1,5 @@
 Need to add getenv for twitter access token for better readability
 
 Create a polling server/and create a bot
+
+https://github.com/scotch-io/react-tweets

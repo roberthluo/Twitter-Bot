@@ -28,3 +28,5 @@ https://developers.google.com/api-client-library/python/start/get_started
 https://cloud.google.com/natural-language/docs/getting-started#set_up_your_project
 
 https://developers.google.com/identity/protocols/application-default-credentials
+
+Add keys to YAML files
