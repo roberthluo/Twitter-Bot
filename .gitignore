@@ -1,4 +1,4 @@
 secret_file.py
 
-./twitter-bot/config.yaml
-./google-api-client/config.yaml
+twitter-bot/config.yaml
+google-api-client/config.yaml
