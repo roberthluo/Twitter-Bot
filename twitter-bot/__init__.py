@@ -17,8 +17,9 @@ class twitter_bot(tweepy.StreamListener):
 
 
     def __init__(self):
-        random.seed()
-
+        #random.seed()
+        self.TWITTERBOT_CONFIG = {}
+        self.TWITTER_AUTHORIZED_CONNECTION = None
 
     def on_status(self, status):
         print(status.text)
@@ -35,6 +36,30 @@ class twitter_bot(tweepy.StreamListener):
                 line = line.split(":")
                 paramter = line[0].strip
                 value = line[1].strip()
+                self.TWITTERBOT_CONFIG[paramter] = value
+
+
+        print(TWITTERBOT_CONFIG)
+
+        #Update Fields
+
+        #Create a connection to twitter
+        self.TWITTER_CONNECTION = Twitter(auth=OAuth(self.BOT_CONFIG["OAUTH_TOKEN"],
+                                                     self.BOT_CONFIG["OAUTH_SECRET"],
+                                                     self.BOT_CONFIG["CONSUMER_KEY"],
+                                                     self.BOT_CONFIG["CONSUMER_SECRET"]))
+
+
+        def get_followers_list(self):
+        """
+            Returns the set of users that are currently following the user.
+        """
+
+        followers_list = []
+        with open(self.BOT_CONFIG["FOLLOWERS_FILE"], "r") as in_file:
+            for line in in_file:
+                followers_list.append(int(line))
+
 
 
     #def create_stream(self, api):
